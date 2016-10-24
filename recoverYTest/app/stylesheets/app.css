@@ -1,0 +1,59 @@
+body {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 4%;
+    font-family: monospace;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+}
+
+input, label {
+    display:block;
+}
+
+.inl > input, .inl > label
+{
+    display:inline;
+    width: auto;
+}
+
+
+
+label {
+    font-weight: bold;
+}
+
+button {
+    font-size: 16px;
+    padding: 5px;
+}
+
+h1, h2 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #AAA;
+    font-size: 32px;
+}
+
+h3 {
+    font-weight: normal;
+    color: #AAA;
+    font-size: 24px;
+}
+
+.black {
+    color: black;
+}
+
+#balance {
+    color: black;
+}

@@ -1,0 +1,29 @@
+Ethereum uses KECCAK-256. It should be noted that it does not follow 
+the FIPS-202 based standard of Keccak, which was finalized in August 2015.
+
+Hashing the string "testing":
+Ethereum SHA3 function in Solidity = 5f16f4c7f149ac4f9510d9cf8cf384038ad348b3bcdc01915f95de12df9d1b02
+Keccak-256 (Original Padding) = 5f16f4c7f149ac4f9510d9cf8cf384038ad348b3bcdc01915f95de12df9d1b02
+SHA3-256 (NIST Standard) = 7f5979fb78f082e8b1c676635db8795c4ac6faba03525fb708cb5fd68fd40c5e
+
+More info:
+https://github.com/ethereum/EIPs/issues/59
+http://ethereum.stackexchange.com/questions/550/which-cryptographic-hash-function-does-ethereum-use
+
+Test Data
+    
+    Set 1:
+        privbkey c9bbc841d7b374f577c6ffb74c3a144af897b5521629e7d91600271da3d833e6
+        
+        cpk: 03c4ff14c57405712bc8bed1d5e4c96805d5e35712f0749b2510eba53c0bb02567
+        expect: d6ad7bf944b8e6b7329e4c2470099354f002b878b8423598f1d1cb7e4ff80159
+        get:  0xd6ad7bf944b8e6b7329e4c2470099354f002b878b8423598f1d1cb7e4ff80159
+
+        hash full pubkey: 0xf7dddb3a1be98962c8dbb29b21a498561cae7ee3754312f9fdffaae807c91fbd
+        eth address"0x21a498561cae7ee3754312f9fdffaae807c91fbd
+
+
+    Set 2:
+        cpk: 02d0de0aaeaefad02b8bdc8a01a1b8b11c696bd3d66a2c5f10780d95b7df42645c
+        expect: d85228a6fb29940e858e7e55842ae2bd115d1ed7cc0e82d934e929c97648cb0a
+        get:  0xd85228a6fb29940e858e7e55842ae2bd115d1ed7cc0e82d934e929c97648cb0a

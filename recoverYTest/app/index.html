@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" /> 
+    <title>BTC -> Test Recover App</title>
+    <link href="./app.css" rel='stylesheet' type='text/css'>
+    <script src="./bitcoin-proof.js"></script>
+    <script src="./app.js"></script>
+    <script src="./jquery-3.1.1.min.js"></script>
+    <script src="./LineReader.js"></script>
+</head>
+
+<body>
+    <h1>Test Recover</h1>
+    <h2>Demo Dapp</h2>
+    
+    <label for="cPubkey">Compressed public key</label>
+    <input type="text" id="cPubkey" size="66" maxlength="66"/>
+    <button id="btnA" onclick="decompress(0)">Call Decompress</button>
+    <button id="btnC" onclick="toAddress(0)">Call Get Eth Address</button>
+    <br/><br/>
+    <button id="btnD" onclick="decompress(1)">Txn Decompress</button>
+    <button id="btnE" onclick="toAddress(1)">Txn Get Eth Address</button>
+    
+    <br/><br/>
+    <input type="file" id="files" name="files[]" />
+    <br/>
+    <span class="inl">
+    <label for="lStart">Start Line:</label>
+    <input type="text" id="lStart" size="12" maxlength="66"/>
+    <label for="tCount">Count:</label>
+    <input type="text" id="tCount" size="12" maxlength="66"/>
+    </span>
+    <br/>
+    <button id="btnB" onclick="processFile()">Process File</button>
+    
+    <br/><br/><br/>
+    
+    <label for="taResults">Results</label>
+    <textarea id="taResults" rows="12"></textarea>
+    <br/><br/>
+    
+</body>
+</html>

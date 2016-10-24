@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" /> 
+    <title>BTC -> Test BTC TX -> Token</title>
+    <link href="./app.css" rel='stylesheet' type='text/css'>
+    <script src="./bitcoin-proof.js"></script>
+    <script src="./app.js"></script>
+    <script src="./jquery-3.1.1.min.js"></script>
+    <script src="./LineReader.js"></script>
+</head>
+
+<body>
+    <h1>Test BTC TX -> Token</h1>
+    <h2>Demo Dapp</h2>
+    
+    <label for="destScript">Destination Script</label>
+    <!--<textarea id="destScript" rows="2"></textarea>-->
+    <input type="text" id="destScript"/>
+    <button id="btnGetDestScript" onclick="getDestScript()">Get Script</button>
+    <button id="btnSetDestScript" onclick="setDestScript()">Set Script</button>
+    <br/><br/>
+    
+    <label for="sbTest">Bitcoin Main/Testnet</label>
+    <select id="sbTest">
+        <option value="test" selected='selected'>Testnet</option>
+        <option value="main">Mainnet</option>
+    </select>
+    
+    <br/>
+    <label for="txnHash">Bitcoin Transaction Hash</label>
+    <input type="text" id="txnHash" size="64" maxlength="64"/>
+    <button id="btnLookupTxn" onclick="lookupTxn()">Lookup Txn</button>
+    
+    <br/><br/>
+    
+    <label for="txnRaw">Raw Transaction</label>
+    <textarea id="txnRaw" rows="6"></textarea>
+    <button id="btnProcess" onclick="processTxn()">Process Txn</button>
+    <br/><br/>
+    
+    <!--
+    <label for="cPubkey">Compressed public key</label>
+    <input type="text" id="cPubkey" size="66" maxlength="66"/>
+    <button id="btnA" onclick="decompress()">Decompress</button>
+    <button id="btnC" onclick="toAddress()">Get Eth Address</button>
+    
+    
+    <br/><br/>
+    <input type="file" id="files" name="files[]" />
+    <button id="btnB" onclick="processFile()">Process File</button>
+    -->
+    
+    <br/><br/><br/>
+    
+    <label for="taResults">Results</label>
+    <textarea id="taResults" rows="12"></textarea>
+    <br/><br/>
+    
+    <label for="blockHash">Block Hash</label>
+    <input type="text" id="blockHash" size="66" maxlength="66"/>
+    <br/>
+    <label for="txnId">Txn ID</label>
+    <input type="text" id="txnId" size="66" maxlength="66"/>
+    <br/>
+    
+    
+    <label for="txnMerkleSibling">Merkle Sibling</label>
+    <textarea id="txnMerkleSibling" rows="6"></textarea>
+    <br/><br/>
+    
+    <label for="addrRelay">Relay Address</label>
+    <input type="text" id="addrRelay" size="66" maxlength="66"/>
+    <button id="btnRelay" onclick="relayTxn()">Relay Txn</button>
+    <button id="btnVerify" onclick="verifyTxn()">Verify Txn</button>
+    <br/><br/>
+    
+</body>
+</html>

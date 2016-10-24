@@ -1,0 +1,43 @@
+
+To Check:
+    - Is it necessary to check that txn bytes never overflows?
+        - No
+            txn.length = 224
+            log1("txn[50]:", bytes32(txn[50]));
+                Works
+            log1("txn[500]:", bytes32(txn[500]));
+                Runtime Error: invalid JUMP
+    
+    - Necessary to mark failed transactions?
+        - depends who pays the gas fee
+    
+    - Pack destinationScript in a uint256
+        - I'd have to store the length too, taking 2 words total, same as bytes
+            - could pack length in some unused bytes of the word storing the script?
+    
+    - Better error messages instead of throw
+        - throw undoes the entire function, so no events will be mined
+    
+
+
+Notes:
+    - Shift operators not yet implemented.
+
+
+
+
+Example:
+    testnet
+    txn:     0100000001448bb7e8d9bb0a1917c3b1d72f6ac2ee6e201a531b4ef27c506a7d7271ccc02a010000006a473044022070c33aae3772b60569517227227131f2a64b6a95261b7f3ff7233e94c7d992770220356d10b312882442de0899f784f783147a6550c2aa1be135201930c0f2da72f0012103c4ff14c57405712bc8bed1d5e4c96805d5e35712f0749b2510eba53c0bb02567feffffff0258863a00000000001976a914049269203c918945276bd140e88811d1db1ea7f688aca0860100000000001976a9149cd4d10ef95ba0b12de96178df25a12b4a2f63fe88acdd190f00
+    cpubkey: 03c4ff14c57405712bc8bed1d5e4c96805d5e35712f0749b2510eba53c0bb02567
+    pubkey:  04c4ff14c57405712bc8bed1d5e4c96805d5e35712f0749b2510eba53c0bb02567d6ad7bf944b8e6b7329e4c2470099354f002b878b8423598f1d1cb7e4ff80159
+    address: 21a498561cae7ee3754312f9fdffaae807c91fbd
+    
+    amounts
+    58863a0000000000
+    3a8658
+    3835480
+    3a -> 58 * 65536
+    86 -> 134 * 256
+    58 -> 88 
+
